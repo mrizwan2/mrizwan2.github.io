@@ -40,7 +40,7 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: var(--primary-color);
+  color: #0000FF;
 }
 
 .navbar ul li a i {
