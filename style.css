@@ -126,11 +126,16 @@ body {
 /* Header */
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px 40px;
   align-items: center;
   background: #fff;
   border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header .logo {
