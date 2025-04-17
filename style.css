@@ -16,7 +16,8 @@ body {
   color: #1a1a1a;
 }
     body {
-      background-image: url('https://engineering.cmu.edu/next/_files/images/visit-us-hamerschlag.png');
+      background-image: url('');
+      background-colour: #C41230;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
