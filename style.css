@@ -18,13 +18,15 @@ body {
 
 /* Layout */
 .container {
-  flex: 1;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+  position: relative;
+  left: 0;
+  margin-left: 0;
+  padding-left: 40px; /* adjust as needed */
+  padding-right: 40px; /* optional: prevents it from touching screen edge */
+  max-width: 100%;     /* prevent overflow */
+  box-sizing: border-box; /* include padding in width calc */
 }
+
 /* Left Profile Card */
 .profile-card {
   background: #eae0d6;
@@ -198,7 +200,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .container {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
   }
