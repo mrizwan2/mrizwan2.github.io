@@ -84,6 +84,33 @@ body {
 .header nav a.active {
   color: #2962ff;
 }
+/* Footer */
+
+.footer {
+   display: flex;
+  justify-content: space-between;
+  background-colour: #C41230;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: 13px;
+  color: #A9A9A9;
+}
+
+.footer .left,
+.footer .center,
+.footer .right {
+  display: flex;
+  align-items: center;
+}
+
+.footer .right a {
+  margin-left: 10px;
+  color: #A9A9A9;
+}
 
 @media screen and (max-width: 768px) {
   .projets-container {
