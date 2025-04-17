@@ -93,6 +93,10 @@ body {
 }
 
 /* Right Side Content */
+.right-column {
+  flex: 2 1 600px;
+}
+
 .content {
   flex: 1;
   padding: 40px;
