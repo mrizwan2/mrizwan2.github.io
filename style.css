@@ -8,10 +8,12 @@
 /* Body and Fonts */
 body {
   font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background: #fdfdfd;
   color: #1a1a1a;
-  margin: 0;
-  padding: 0;
 }
 
     body {
@@ -37,10 +39,6 @@ body {
 
 
 /* Left Profile Card */
-.left-column {
-  flex: 1 300px;
-  max-width: 400px;
-}
 
 .profile-card {
   background: #eae0d6;
@@ -81,28 +79,9 @@ body {
   margin-top: 16px;
 }
 
-.icon-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.icon-row img {
-  width: 28px;
-  height: 28px;
-}
-
-.icon-row span {
-  font-size: 0.95rem;
-  color: #333;
-  word-break: break-word;
-}
 
 
 /* Right Side Content */
-.right-column {
-  flex: 2;
-}
 
 .content {
   flex: 2;
