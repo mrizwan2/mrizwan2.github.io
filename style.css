@@ -1,8 +1,13 @@
 /* Base Reset */
+.main {
+  display: flex;
+  flex-direction: row; /* force horizontal layout */
+  align-items: flex-start; /* align to top */
+}
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* Body and Fonts */
