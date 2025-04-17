@@ -174,14 +174,17 @@ body {
 /* Footer */
 
 .footer {
-  position: absolute;
+   display: flex;
+  justify-content: space-between;
+  background-colour: #C41230;
+  position: fixed;
   bottom: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
   font-size: 13px;
-  color: #C41230;
+  color: #A9A9A9;
 }
 
 .footer .left,
