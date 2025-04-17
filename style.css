@@ -59,29 +59,29 @@ body {
   color: #333;
   margin-top: 10px;
 }
+.profile-card {
+  position: relative;
+  padding-bottom: 80px;    /* reserve space for the icons at the bottom */
+}
 
 /* Social Icons */
-.social-icons {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
+/* 2) Style and absolutely position the icons row */
+.profile-card .social-icons {
+  position: absolute;
+  bottom: 20px;            /* 20px up from the bottom edge of the card */
+  left: 50%;               /* center it horizontally */
+  transform: translateX(-50%);
+  display: flex;           /* lay icons out in a row */
+  gap: 15px;               /* space between each icon */
+  /* no margins, so it won’t shift anything else */
 }
 
-.social-icons a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.social-icons a img {
-  width: 22px;
-  height: 22px;
+/* 3) icon sizing */
+.profile-card .social-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  /* add hover if you like */
 }
 
 .social-icons a:hover {
