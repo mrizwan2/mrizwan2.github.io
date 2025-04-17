@@ -19,7 +19,7 @@ body {
 /* Layout */
 .container {
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   max-width: 1200px;
   margin: auto;
