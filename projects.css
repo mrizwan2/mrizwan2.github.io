@@ -25,35 +25,35 @@ body {
       background-color: rgba(255, 255, 255, 0.85); /* fallback for transparency */
     }
 .projects-container {
-      max-width: 1200px;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
+  max-width: 800px;
+  margin: 60px auto;
+  display: block; /* Change from grid to block layout */
+  padding: 20px;
+}
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
+.project-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px; /* Space between stacked cards */
+  transition: transform 0.2s;
+}
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
+.project-card:hover {
+  transform: translateY(-5px);
+}
 
-    .project-card h3 {
-      margin-top: 0;
-      color: #2962ff;
-    }
+.project-card h3 {
+  margin-top: 0;
+  color: #2962ff;
+}
 
-    .project-card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* Header */
 .header {
   display: flex;
