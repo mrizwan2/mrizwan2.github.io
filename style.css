@@ -8,13 +8,12 @@
 /* Body and Fonts */
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   background: #fdfdfd;
   color: #1a1a1a;
+  margin: 0;
+  padding: 0;
 }
+
     body {
       background-image: url('');
       background-colour: #C41230;
