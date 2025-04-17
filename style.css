@@ -239,7 +239,7 @@ body {
 
   .buttons {
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
   }
 
   .buttons a {
