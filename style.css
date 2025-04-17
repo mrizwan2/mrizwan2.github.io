@@ -1,8 +1,8 @@
 /* Base Reset */
 .main {
   display: flex;
-  flex-direction: row; /* force horizontal layout */
-  align-items: flex-start; /* align to top */
+  flex-direction: row; 
+  align-items: flex-start; 
 }
 * {
   box-sizing: border-box;
@@ -24,10 +24,10 @@ body {
 
 /* Layout */
 .container {
-  display: flex;               /* ← make it a flex‐row container */
-  flex-direction: row;         /* ← always row, never column */
-  align-items: flex-start;     /* ← align tops */
-  gap: 40px;                   /* ← space between left & right */
+  display: flex;              
+  flex-direction: row;       
+  align-items: flex-start;     
+  gap: 40px;                   
   width: 100%;
   max-width: 1200px;
   margin: auto;
@@ -67,19 +67,16 @@ body {
 }
 .profile-card {
   position: relative;
-  padding-bottom: 80px;    /* reserve space for the icons at the bottom */
+  padding-bottom: 80px;    
 }
 
 /* Social Icons */
-/* 2) Style and absolutely position the icons row */
-.profile-card .social-icons {
   position: absolute;
-  bottom: 20px;            /* 20px up from the bottom edge of the card */
-  left: 50%;               /* center it horizontally */
+  bottom: 20px;          
+  left: 50%;            
   transform: translateX(-50%);
-  display: flex;           /* lay icons out in a row */
-  gap: 15px;               /* space between each icon */
-  /* no margins, so it won’t shift anything else */
+  display: flex;        
+  gap: 15px;             
 }
 
 /* 3) icon sizing */
