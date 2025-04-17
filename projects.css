@@ -125,6 +125,7 @@ body {
 
   .content {
     text-align: center;
+    gap: 5px;
     padding: 0 10px;
   }
 
