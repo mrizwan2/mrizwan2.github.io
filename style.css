@@ -28,12 +28,14 @@ body {
 /* Layout */
 .container {
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
 }
+
 
 /* Left Profile Card */
 .left-column {
@@ -101,6 +103,7 @@ body {
 /* Right Side Content */
 .right-column {
   flex: 2 1 600px;
+  max-width: 700px;;
 }
 
 .content {
