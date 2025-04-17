@@ -3,6 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #333;
+}
+
+.header nav a.active {
+  color: #2962ff;
+}
 
 /* Body and Fonts */
 body {
