@@ -36,6 +36,11 @@ body {
 }
 
 /* Left Profile Card */
+.left-column {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
 .profile-card {
   background: #eae0d6;
   font-family: 'Helvetica Neue', sans-serif;
@@ -91,6 +96,7 @@ body {
   color: #333;
   word-break: break-word;
 }
+
 
 /* Right Side Content */
 .right-column {
