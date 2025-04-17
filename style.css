@@ -17,17 +17,14 @@ body {
 }
 
 /* Layout */
-
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px;
-  gap: 60px;
-  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
 }
-
 /* Left Profile Card */
 .profile-card {
   background: #eae0d6;
