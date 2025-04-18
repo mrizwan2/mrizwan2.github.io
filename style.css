@@ -9,8 +9,8 @@
 body {
   font-family: 'Helvetica Neue', sans-serif;
   display: flex;
-  justify-content: start-flex;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
   background: #fdfdfd;
   color: #1a1a1a;
