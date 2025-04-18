@@ -19,13 +19,12 @@ body {
 
 /* Layout */
 .container {
-  display: flex;              
+  display: flex;  
+  position absolute;
  justify-content: left;
-    align-items: center;    
-  gap: 40px;
-  height: 100%;
-  width: 100%;
-  max-width: 1200px;
+    align-items: left-center;    
+  height: 600px;
+  width: 350px;
   margin: auto;
   padding: 40px 20px;
 }
