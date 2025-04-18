@@ -16,45 +16,72 @@ body {
   color: #1a1a1a;
 }
 
-/* Layout */
-.container {
+/* Left Profile Card and Background */
+.left-col {
+  position: relative;
+  width: 420px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Left Profile Card */
+.beige-bg {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 340px;
+  height: 420px;
+  background: #ded2c1;
+  border-radius: 0;
+  z-index: 1;
+}
+
 .profile-card {
-  background: #eae0d6;
-  padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+  background: #f5ede5;
+  padding: 40px 30px 24px 30px;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
   text-align: center;
-  width: 350px;
+  width: 300px;
+  margin: 50px 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-card img {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  border: 5px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .profile-card h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background: #2962ff;
+  margin: 14px 0 10px 0;
+  border-radius: 1px;
 }
 
 .profile-card .title {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 2px;
-  color: #333;
-  margin-top: 10px;
+  color: #888;
+  margin-bottom: 18px;
+  font-weight: 500;
 }
 
 /* Social Icons */
@@ -62,21 +89,26 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 18px;
 }
 
 .social-icons a {
-  color: #1a1a1a;
+  color: #222;
   text-decoration: none;
   font-size: 18px;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #2962ff;
 }
 
 /* Right Side Content */
 .content {
   flex: 1;
-  padding: 40px;
+  padding: 70px 40px 0 80px;
+  min-width: 320px;
 }
-
 /* Paragraph */
 .content p {
   font-size: 14px;
