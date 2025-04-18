@@ -95,6 +95,8 @@ body {
 
 /* Right Side Content */
 .content {
+   justify-content: right;
+    align-items: center;  
   flex: 2;
   padding: 40px;
 }
