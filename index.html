@@ -59,6 +59,7 @@
             grid-template-columns: auto 1fr;
             gap: 2rem;
             padding: 2rem 3rem;
+            position: relative;
             position: fixed;
             z-index: 10;
         }
@@ -399,11 +400,11 @@
             .path-container {
                 height: 500px;
             }
-            
+
             .topic-node {
                 font-size: 0.9rem;
             }
-            
+
             .node-content {
                 max-width: 220px;
             }
@@ -414,32 +415,32 @@
                 grid-template-columns: 1fr;
                 padding: 1.5rem;
             }
-            
+
             .nav {
                 justify-content: flex-start;
                 gap: 2rem;
             }
-            
+
             .main-content {
                 padding: 1.5rem;
             }
-            
+
             .greeting {
                 font-size: 2rem;
             }
-            
+
             .intro-text {
                 font-size: 1rem;
             }
-            
+
             .path-container {
                 height: 400px;
             }
-            
+
             .topic-node {
                 font-size: 0.8rem;
             }
-            
+
             .node-content {
                 max-width: 180px;
             }
@@ -460,7 +461,7 @@
 </head>
 <body>
     <div class="grid-overlay"></div>
-    
+
     <header class="header">
         <div class="header-left">
             <h1 class="name">MOHAMMED<br>RIZWAN</h1>
@@ -616,16 +617,16 @@
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            
+
             // ===== SMOOTH SCROLL FOR NAVIGATION =====
             const navLinks = document.querySelectorAll('.nav-link');
-            
+
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
+
                     if (targetElement) {
                         const headerOffset = 80;
                         const elementPosition = targetElement.getBoundingClientRect().top;
@@ -641,11 +642,11 @@
 
             // ===== TOPIC NODE INTERACTIONS =====
             const topicNodes = document.querySelectorAll('.topic-node');
-            
+
             topicNodes.forEach(node => {
                 node.addEventListener('click', function() {
                     const title = this.querySelector('.node-title').textContent;
-                    
+
                     // If it's the explore node, scroll to projects
                     if (title.includes('Explore')) {
                         const projectsSection = document.querySelector('#projects');
@@ -711,7 +712,7 @@
 
             // ===== HIGHLIGHT HOVER EFFECTS =====
             const highlights = document.querySelectorAll('.highlight');
-            
+
             highlights.forEach(highlight => {
                 highlight.addEventListener('mouseenter', function() {
                     this.style.transition = 'all 0.3s ease';
