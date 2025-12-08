@@ -48,7 +48,7 @@
             background-image: 
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 100px 100px;
+            background-size: 50px 50px;
             pointer-events: none;
             z-index: 1;
         }
@@ -60,7 +60,6 @@
             gap: 2rem;
             padding: 2rem 3rem;
             position: relative;
-            position: fixed;
             z-index: 10;
         }
 
@@ -150,6 +149,25 @@
             margin-bottom: 2rem;
             line-height: 1.2;
             letter-spacing: -0.02em;
+        }
+
+        .name-swap {
+            display: inline-block;
+            position: relative;
+        }
+
+        .name-swap::after {
+            content: 'Mohammed';
+            animation: swapNames 4s ease-in-out infinite;
+        }
+
+        @keyframes swapNames {
+            0%, 45% {
+                content: 'Mohammed';
+            }
+            50%, 95% {
+                content: 'Rizwan';
+            }
         }
 
         .intro-text {
@@ -325,47 +343,6 @@
             background-color: var(--accent-brown);
         }
 
-        /* ===== ABOUT SECTION ===== */
-        .about-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        /* ===== PROJECTS SECTION ===== */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 4px solid var(--accent-brown);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--accent-brown);
-        }
-
-        .project-description {
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
         /* ===== CONTACT SECTION ===== */
         .contact-info {
             font-size: 1.1rem;
@@ -400,11 +377,11 @@
             .path-container {
                 height: 500px;
             }
-
+            
             .topic-node {
                 font-size: 0.9rem;
             }
-
+            
             .node-content {
                 max-width: 220px;
             }
@@ -415,42 +392,38 @@
                 grid-template-columns: 1fr;
                 padding: 1.5rem;
             }
-
+            
             .nav {
                 justify-content: flex-start;
                 gap: 2rem;
             }
-
+            
             .main-content {
                 padding: 1.5rem;
             }
-
+            
             .greeting {
                 font-size: 2rem;
             }
-
+            
             .intro-text {
                 font-size: 1rem;
             }
-
+            
             .path-container {
                 height: 400px;
             }
-
+            
             .topic-node {
                 font-size: 0.8rem;
             }
-
+            
             .node-content {
                 max-width: 180px;
             }
 
             .section-title {
                 font-size: 2rem;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
             }
 
             section {
@@ -461,21 +434,22 @@
 </head>
 <body>
     <div class="grid-overlay"></div>
-
+    
     <header class="header">
         <div class="header-left">
             <h1 class="name">MOHAMMED<br>RIZWAN</h1>
         </div>
         <nav class="nav">
-            <a href="#about" class="nav-link">ABOUT</a>
-            <a href="#projects" class="nav-link">PROJECTS</a>
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="projects.html" class="nav-link">PROJECTS</a>
             <a href="#contact" class="nav-link">CONTACT</a>
         </nav>
     </header>
 
     <main class="main-content">
         <section class="intro-section">
-            <h2 class="greeting">Hi, I'm Mohammed.</h2>
+            <h2 class="greeting">Hi, I'm <span class="name-swap"></span>.</h2>
             <p class="intro-text">
                 I'm a graduate student at <span class="highlight">Carnegie Mellon University</span> studying <span class="highlight">Engineering and Technology Innovation Management</span>. My work explores how <span class="highlight">technology, data, and design</span> can drive <span class="highlight">innovation across mobility, finance, and sustainability</span>.
             </p>
@@ -554,54 +528,15 @@
             </div>
         </div>
 
-        <section id="about">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <p style="margin-bottom: 1.5rem;">
-                    I'm passionate about the intersection of technology and human experience. My research focuses on making AI systems more transparent, fair, and accessible to everyone.
-                </p>
-                <p style="margin-bottom: 1.5rem;">
-                    At Carnegie Mellon, I'm exploring how design thinking and data-driven approaches can create more ethical technological solutions across industries—from autonomous vehicles to financial systems.
-                </p>
-                <p>
-                    When I'm not researching, you'll find me exploring new cities, reading about behavioral economics, or experimenting with new design tools.
-                </p>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3 class="project-title">AI Bias Detection Framework</h3>
-                    <p class="project-description">
-                        Developed a framework for identifying and mitigating bias in machine learning models used in hiring and lending decisions.
-                    </p>
-                </div>
-                <div class="project-card">
-                    <h3 class="project-title">Sustainable Mobility Study</h3>
-                    <p class="project-description">
-                        Research project analyzing user behavior patterns in shared mobility services to optimize routes and reduce carbon footprint.
-                    </p>
-                </div>
-                <div class="project-card">
-                    <h3 class="project-title">Transparent AI Interface</h3>
-                    <p class="project-description">
-                        Designed an interface that explains AI decision-making processes to end users in healthcare applications.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
             <h2 class="section-title">Contact</h2>
             <div class="contact-info">
                 <p>Let's connect and explore opportunities to collaborate.</p>
                 <p style="margin-top: 2rem;">
-                    <strong>Email:</strong> <a href="mailto:rizwanmohd2409@gmail.com" class="contact-link">rizwanmohd2409@gmail.com</a>
+                    <strong>Email:</strong> <a href="mailto:mrizwan@cmu.edu" class="contact-link">mrizwan@cmu.edu</a>
                 </p>
                 <p>
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-rizwan-b80696176/" class="contact-link" target="_blank">linkedin.com/in/mohammedrizwan</a>
+                    <strong>LinkedIn:</strong> <a href="https://linkedin.com" class="contact-link" target="_blank">linkedin.com/in/mohammedrizwan</a>
                 </p>
                 <p>
                     <strong>Location:</strong> Pittsburgh, PA
@@ -611,53 +546,50 @@
     </main>
 
     <footer>
-        <p>© 2025 Mohammed Rizwan. Driven by Curiosity. Powered by Purpose. Innovator at Heart.</p>
+        <p>© 2024 Mohammed Rizwan. Designed with care at Carnegie Mellon University.</p>
     </footer>
 
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-
+            
             // ===== SMOOTH SCROLL FOR NAVIGATION =====
             const navLinks = document.querySelectorAll('.nav-link');
-
+            
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+                    const href = this.getAttribute('href');
+                    
+                    // Only prevent default for anchor links on the same page
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href;
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            const headerOffset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                    if (targetElement) {
-                        const headerOffset = 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
 
             // ===== TOPIC NODE INTERACTIONS =====
             const topicNodes = document.querySelectorAll('.topic-node');
-
+            
             topicNodes.forEach(node => {
                 node.addEventListener('click', function() {
                     const title = this.querySelector('.node-title').textContent;
-
-                    // If it's the explore node, scroll to projects
+                    
+                    // If it's the explore node, go to projects page
                     if (title.includes('Explore')) {
-                        const projectsSection = document.querySelector('#projects');
-                        const headerOffset = 80;
-                        const elementPosition = projectsSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                        window.location.href = 'projects.html';
                     }
                 });
             });
@@ -686,58 +618,13 @@
                 }
             });
 
-            // ===== INTERSECTION OBSERVER FOR SECTION ANIMATIONS =====
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(30px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            });
-
             // ===== HIGHLIGHT HOVER EFFECTS =====
             const highlights = document.querySelectorAll('.highlight');
-
+            
             highlights.forEach(highlight => {
                 highlight.addEventListener('mouseenter', function() {
                     this.style.transition = 'all 0.3s ease';
                 });
-            });
-
-            // ===== PROJECT CARD STAGGER ANIMATION =====
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-            });
-
-            const projectObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            projectCards.forEach(card => {
-                projectObserver.observe(card);
             });
 
             // ===== CONSOLE MESSAGE =====
