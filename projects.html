@@ -1,58 +1,469 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mohammed Rizwan</title>
-  <link rel="stylesheet" href="projects.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Mohammed Rizwan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-light: #F5F3ED;
+            --text-dark: #2C1810;
+            --accent-brown: #8B4513;
+            --accent-brown-light: #A0522D;
+            --highlight-pink: #F0E0E0;
+            --grid-color: rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            padding: 2rem 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            line-height: 1.4;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            transition: opacity 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-link.active {
+            color: var(--accent-brown);
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 5;
+            padding: 4rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent-brown);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-brown-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--highlight-pink);
+            color: var(--accent-brown);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+        }
+
+        .project-link {
+            color: var(--accent-brown);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            opacity: 0.7;
+        }
+
+        .project-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-brown);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-card.featured {
+            position: relative;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.5);
+            margin-top: 5rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .nav {
+                justify-content: flex-start;
+                gap: 1.5rem;
+            }
+
+            .main-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-     
-   <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <span style="color:#2962ff;">■</span> <strong>Mohammed Rizwan</strong> 
-    </div>
-    <nav>
-      <a href="index.html" class="active">ABOUT ME</a>
-      <a href="resume.html">RESUME</a>
-      <a href="projects.html">PROJECTS</a>
-    </nav>
-  </header>
+    <div class="grid-overlay"></div>
+    
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="name">MOHAMMED<br>RIZWAN</a>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="projects.html" class="nav-link active">PROJECTS</a>
+            <a href="index.html#contact" class="nav-link">CONTACT</a>
+        </nav>
+    </header>
 
+    <main class="main-content">
+        <h1 class="page-title">My Projects</h1>
+        <p class="page-subtitle">Exploring the intersection of AI, ethics, and human-centered design</p>
 
-  <!-- Projects Grid -->
-  <div class="projects-container">
-    <div class="project-card">
-      <h3>EV Battery Optimization</h3>
-      <p>Designed a framework for improving EV battery performance using predictive analytics and lifecycle cost analysis.</p>
-    </div>
-    <div class="project-card">
-      <h3>Fintech Product Strategy</h3>
-      <p>Collaborated with a startup to develop a GTM strategy for a savings platform targeting Gen Z consumers.</p>
-    </div>
-    <div class="project-card">
-      <h3>Social Impact Program</h3>
-      <p>Supported a government-backed initiative by improving delivery logistics and community engagement mechanisms.</p>
-    </div>
-    <!-- Add more cards as needed -->
-  </div>
-    </body>
-    <!-- Footer -->
-  <footer class="footer">
-    <div class="left">
-      © 2025 by Mohammed Rizwan. 
-    </div>
-    <div class="center">
-      <strong>Call:</strong>   (412) 759-8201
-    </div>
-    <div class="center">
-      <strong>Write:</strong>  mrizwan2@andrew.cmu.edu
-    </div>
-   
-  </footer>
+        <div class="projects-grid">
+            <div class="project-card featured">
+                <span class="featured-badge">Featured</span>
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">AI Ethics</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                    <h2 class="project-title">AI Bias Detection Framework</h2>
+                    <p class="project-description">
+                        Developed a comprehensive framework for identifying and mitigating bias in machine learning models used in hiring and lending decisions. The framework includes automated testing tools and ethical guidelines.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2024</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="project-card">
+                <div class="project-image">🚗</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">Mobility</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                    <h2 class="project-title">Sustainable Mobility Study</h2>
+                    <p class="project-description">
+                        Research project analyzing user behavior patterns in shared mobility services to optimize routes and reduce carbon footprint. Resulted in 23% improvement in efficiency.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2024</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">💊</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">UX Design</span>
+                    </div>
+                    <h2 class="project-title">Transparent AI Interface</h2>
+                    <p class="project-description">
+                        Designed an interface that explains AI decision-making processes to end users in healthcare applications. Improved user trust scores by 40% in pilot testing.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2023</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">Finance</span>
+                        <span class="tag">Policy</span>
+                    </div>
+                    <h2 class="project-title">Algorithmic Accountability in Finance</h2>
+                    <p class="project-description">
+                        Policy research examining regulatory frameworks for algorithmic decision-making in financial services. Published findings influenced local fintech regulations.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2023</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🎯</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HCI</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <h2 class="project-title">Human-AI Interaction Patterns</h2>
+                    <p class="project-description">
+                        Mixed-methods study exploring how users develop mental models of AI systems. Findings inform best practices for AI interface design and user education.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2023</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🌱</div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">IoT</span>
+                    </div>
+                    <h2 class="project-title">Smart Energy Management System</h2>
+                    <p class="project-description">
+                        IoT-based system for optimizing energy consumption in buildings using predictive analytics and user behavior modeling. Achieved 30% reduction in energy waste.
+                    </p>
+                    <div class="project-meta">
+                        <span class="project-date">2022</span>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Mohammed Rizwan. Designed with care at Carnegie Mellon University.</p>
+    </footer>
 </body>
 </html>
 
